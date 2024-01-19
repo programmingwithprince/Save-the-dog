@@ -1,0 +1,17 @@
+name: Unzip File
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  unzip-job:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Unzip file
+      run: unzip savethedog.zip
