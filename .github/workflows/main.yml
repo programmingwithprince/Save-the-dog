@@ -14,4 +14,12 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Unzip file
-      run: unzip savethedog.zip
+      run: |
+        unzip savethedog.zip
+        ls -R
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: unzipped-files
+        path: .  # Path to the directory containing the unzipped files
